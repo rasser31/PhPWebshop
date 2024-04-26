@@ -27,7 +27,7 @@
       $user_id = $_POST['user_id'];
 
       $insert = $conn->prepare("INSERT INTO cart (pro_id, pro_name, pro_image, pro_price, pro_amount, pro_file, user_id) 
-                VALUES( pro_id, :pro_name, :pro_image, :pro_price, :pro_amount, :pro_file, :user_id)");
+                VALUES(:pro_id, :pro_name, :pro_image, :pro_price, :pro_amount, :pro_file, :user_id)");
       
       $insert->execute([
           ':pro_id' => $pro_id,
@@ -46,7 +46,7 @@
 
         // Checks for product in cart
         if(isset($_SESSION['user_id'])) {
-            $select = $conn->query("SELECT * FROM cart WHERE pro_id = '$id' AND user_id = '$_SESSION[user_id]'");
+            $select = $conn->query("SELECT * FROM cart WHERE pro_id='$id' AND user_id = '$_SESSION[user_id]'");
             $select->execute();
         }
 
@@ -70,7 +70,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="images p-3">
-                                <div class="text-center p-4"> <img id="main-image" src="../images/<?php echo $product->image; ?>" width="250" /> </div>
+                                <div class="text-center p-4"> <img id="main-image" src="../admin-panel/products-admins/images/<?php echo $product->image; ?>" width="250" /> </div>
                             </div>
                         </div>
                         <div class="col-md-6">

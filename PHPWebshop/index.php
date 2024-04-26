@@ -26,7 +26,7 @@
         <div class="row mt-5">
             <?php foreach($allRows as $product) : ?>
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1">
-                <div class="card" >
+                <div class="card">
                     <img height="213px" class="card-img-top" src="admin-panel/products-admins/images/<?php echo $product->image; ?>">
                     <div class="card-body" >
                         <h5 class="d-inline"><b><?php echo $product->name; ?></b> </h5>

@@ -29,12 +29,6 @@
                 <li class="nav-item">
                     <a class="nav-link active  text-white" aria-current="page" href="<?php echo APPURL;?>">Home</a>
                 </li>
-                <li class="nav-item ">
-                    <a class="nav-link  text-white" href="<?php echo APPURL;?>/contact.php">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active  text-white" aria-current="page" href="<?php echo APPURL;?>/categories/index.php">Categories</a>
-                </li>
 
                 <?php if(isset($_SESSION['username'])) : ?>
                     <li class="nav-item">
@@ -54,10 +48,13 @@
 
                 <?php else :  ?>
                     <li class="nav-item">
-                        <a class="nav-link  text-white" href="<?php echo APPURL;?>/auth/login.php">Login</a>
+                        <a class="nav-link text-white" href="<?php echo APPURL;?>/auth/login.php">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link  text-white" href="<?php echo APPURL;?>/auth/register.php">Register</a>
+                        <a class="nav-link text-white" href="<?php echo APPURL;?>/auth/register.php">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" target="_blank" href="../admin-panel">Admin-Site</a>
                     </li>
                 <?php endif; ?>
             </ul>
