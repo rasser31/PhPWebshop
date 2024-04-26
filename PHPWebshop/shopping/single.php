@@ -27,8 +27,8 @@
       $user_id = $_POST['user_id'];
 
       $insert = $conn->prepare("INSERT INTO cart (pro_id, pro_name, pro_image, pro_price, pro_amount, pro_file, user_id) 
-                VALUES(:pro_id, :pro_name, :pro_image, :pro_price, :pro_amount, :pro_file, :user_id)");
-
+                VALUES( pro_id, :pro_name, :pro_image, :pro_price, :pro_amount, :pro_file, :user_id)");
+      
       $insert->execute([
           ':pro_id' => $pro_id,
           ':pro_name' => $pro_name,
@@ -92,7 +92,7 @@
                                         <input type="hidden" name="pro_name" value="<?php echo $product->name; ?>" class="form-control">
                                     </div>
                                     <div class="">
-                                        <input type="hidden" name="pro_image" value="<?php echo $product->image; ?>" class="form-control">
+                                        <input type="hidden" name="pro_image" value="../admin-panel/products-admins/images/<?php echo $product->image; ?>" class="form-control">
                                     </div>
                                     <div class="">
                                         <input type="hidden" name="pro_price" value="<?php echo $product->price; ?>" class="form-control">
